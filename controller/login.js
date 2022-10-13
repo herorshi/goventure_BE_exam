@@ -8,9 +8,8 @@ app.use(bodyParser.json());
 
 const login = {
   login(req, res) {
-    res.cookie("AD", "100", { maxAge: 900000 });
+    res.cookie("AD", "100", { maxAge: 900000, httpOnly: false });
     // console.log(req.cookies);
-    res.cookie("bsaSession", req.session.id, { httpOnly: false });
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Credentials", "true");
 
