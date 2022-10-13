@@ -6,7 +6,9 @@ var md5 = require("md5");
 app.use(cors());
 const User = {
   test(req, res) {
-    res.json({ status: "success" });
+    res.cookie("AAA", "100");
+    console.log(req.cookies.selt, "selt");
+    res.json({ status: "success", cookie: req.cookies });
   },
   async get_user(req, res) {
     let list_sql = await db.con_db(` SELECT * FROM user ORDER BY id_user DESC `);
