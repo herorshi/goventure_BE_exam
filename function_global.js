@@ -19,8 +19,7 @@ const Module = {
             text: "ErrorBBB",
             data: data,
             token: req.session.token,
-            selt: req.session.selt,
-            cookie: req.session.selt
+            selt: req.session.selt
           });
         } else {
           console.log("True");

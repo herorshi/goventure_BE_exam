@@ -13,6 +13,12 @@ const login = {
     // ssn.email = "metasitstar@gmail.com";
     // ssn.name = "name";
     // console.log(ssn, "ssn");
+    req.session.token = "token";
+    req.session.selt = "selt";
+    res.json({
+      session: req.session
+    });
+    return;
 
     let { username, password } = req.body;
     console.log(username, password);
