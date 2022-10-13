@@ -18,7 +18,8 @@ const Module = {
           res.json({
             text: "Error",
             data: data,
-            token: req.token,
+            token: req.session.token, 
+            selt:req.session.selt
             cookie: req.session.selt
           });
         } else {

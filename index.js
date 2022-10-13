@@ -8,11 +8,10 @@ var session = require("express-session");
 app.use(session({ secret: "XASDASDA" }));
 var ssn;
 const corsConfig = {
-  // origin: function(origin, callback) {
-  //   return callback(null, true);
-  // },
+  origin: function(origin, callback) {
+    return callback(null, true);
+  },
   // origin: "http://localhost:3000",
-  origin: ["https://fe-exam-goventure.vercel.app/", "http://localhost:3000"],
   optionsSuccessStatus: 200,
   credentials: true
 };

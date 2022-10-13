@@ -49,8 +49,7 @@ const login = {
     req.session.selt = random;
     res.json({
       data: data,
-      token: token,
-      session: req.session
+      token: token
     });
   },
   exit(req, res) {
