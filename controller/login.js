@@ -11,7 +11,7 @@ const login = {
     res.cookie("AD", "100", { maxAge: 900000, httpOnly: false });
     // console.log(req.cookies);
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.header("Access-Control-Allow-Credentials", "true");
+    // res.header("Access-Control-Allow-Credentials", "true");
 
     res.json({
       status: 200,
