@@ -1,13 +1,11 @@
 var express = require("express");
 var app = express();
-var cors = require("cors");
 var jwt = require("jsonwebtoken");
 var db = require("../connect_db");
 const cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
 
 const login = {
   async login(req, res) {
