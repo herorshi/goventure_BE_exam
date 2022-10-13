@@ -2,10 +2,9 @@ var express = require("express");
 var app = express();
 var jwt = require("jsonwebtoken");
 var db = require("../connect_db");
-const cookieParser = require("cookie-parser");
+
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
-app.use(cookieParser());
 
 const login = {
   async login(req, res) {
