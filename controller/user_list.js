@@ -5,10 +5,10 @@ var db = require("../connect_db");
 var md5 = require("md5");
 app.use(cors());
 const User = {
-  empty(){
+  empty(req, res) {
     res.json({
-      message:'start'
-    })
+      message: "start"
+    });
   },
   test(req, res) {
     res.cookie("GGG", "100", { httpOnly: true, maxAge: 900000 });
