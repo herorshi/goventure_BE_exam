@@ -45,7 +45,8 @@ const login = {
     res.json({
       data: data,
       token: token,
-      cookie: req.cookies
+      cookie: req.cookies,
+      test: "test"
     });
   },
   exit(req, res) {
