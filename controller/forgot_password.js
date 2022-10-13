@@ -60,7 +60,8 @@ const forgotPassword = {
       });
 
       console.log(url, "url");
-      res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
+      req.session.forgot = random;
+      // res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
       res.status(200).json({
         status: 200,
         message: "กรุณาตรวจสอบ Email"
@@ -68,28 +69,6 @@ const forgotPassword = {
       return;
     }
     console.log(data.length, "data.length");
-    // function makeid(length) {
-    //   var result = [];
-    //   var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    //   var charactersLength = characters.length;
-    //   for (var i = 0; i < length; i++) {
-    //     result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-    //   }
-    //   return result.join("");
-    // }
-    // let id = data[0]["id_user"];
-    // let random = makeid(5);
-    // try {
-    // } catch (e) {}
-    // const user = { id: id };
-    // const token = await jwt.sign({ user }, random);
-    // res.cookie("token", token);
-    // res.cookie("selt", random);
-    // console.log(req.cookies.selt, "selt");
-    // res.json({
-    //   data: data,
-    //   token: token
-    // });
   },
   async reset_password(req, res) {
     let { id, password } = req.body;
@@ -111,9 +90,7 @@ const forgotPassword = {
   },
   exit(req, res) {
     console.log("exit");
-    console.log(req.cookies, "before");
-    res.clearCookie("selt");
-    console.log(req.cookies, "after");
+    delete req.session.selt;
     res.end("");
   },
   async save_member(req, res) {

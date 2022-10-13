@@ -47,9 +47,6 @@ const login = {
     const token = await jwt.sign({ user }, random);
     req.session.token = token;
     req.session.selt = random;
-    // res.cookie("token", token);
-    // res.cookie("selt", random);
-    // console.log(req.cookies.selt, "selt");
     res.json({
       data: data,
       token: token,
@@ -57,16 +54,12 @@ const login = {
     });
   },
   exit(req, res) {
-    console.log("exit");
-    console.log(req.cookies, "before");
-    res.clearCookie("selt");
-    console.log(req.cookies, "after");
+    delete req.session.selt;
     res.end("");
   },
   async protected(req, res) {
     const { token } = req.body;
-    console.log(req.cookies.selt, "SELT");
-    jwt.verify(token, req.cookies.selt, function(err, data) {
+    jwt.verify(token, req.session.selt, function(err, data) {
       if (err) {
         res.json({
           text: "Error",

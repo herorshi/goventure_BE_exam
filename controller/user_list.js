@@ -17,7 +17,6 @@ const User = {
   },
   test(req, res) {
     res.cookie("GGG", "100", { httpOnly: true, maxAge: 900000 });
-    console.log(req.cookies.selt, "selt");
     res.json({ status: "success", b: "TEST" });
   },
   async get_user(req, res) {

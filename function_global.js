@@ -12,14 +12,14 @@ const Module = {
       const bearer = bearerHeader.split(" ");
       const bearerToken = bearer[1];
       req.token = bearerToken;
-      jwt.verify(req.token, req.cookies.selt, function(err, data) {
+      jwt.verify(req.token, req.session.selt, function(err, data) {
         if (err) {
           console.log("FALSE");
           res.json({
             text: "Error",
             data: data,
             token: req.token,
-            cookie: req.cookies
+            cookie: req.session.selt
           });
         } else {
           console.log("True");
