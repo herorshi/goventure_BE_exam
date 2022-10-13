@@ -10,7 +10,7 @@ const corsConfig = {
   //   return callback(null, true);
   // },
   // origin: "http://localhost:3000",
-  origin: ["https://node-api-goventure.vercel.app", "http://localhost:4000"],
+  origin: ["https://fe-exam-goventure.vercel.app/", "http://localhost:3000"],
   optionsSuccessStatus: 200,
   credentials: true
 };
