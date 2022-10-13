@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 const login = {
-  async login(req, res) {
+  login(req, res) {
     res.cookie("AB", "100");
     console.log(req.cookies);
     res.json({
