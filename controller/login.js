@@ -10,6 +10,10 @@ const login = {
   login(req, res) {
     res.cookie("AD", "100", { maxAge: 900000 });
     // console.log(req.cookies);
+    res.cookie("bsaSession", req.session.id, { httpOnly: false });
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Credentials", "true");
+
     res.json({
       status: 200,
       cookie: req.cookies,
