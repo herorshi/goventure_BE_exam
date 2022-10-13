@@ -8,7 +8,7 @@ const User = {
   test(req, res) {
     res.cookie("GGG", "100", { httpOnly: true, maxAge: 900000 });
     console.log(req.cookies.selt, "selt");
-    res.json({ status: "success", cookie: req.cookies, b: "TEST" });
+    res.json({ status: "success", b: "TEST" });
   },
   async get_user(req, res) {
     let list_sql = await db.con_db(` SELECT * FROM user ORDER BY id_user DESC `);
