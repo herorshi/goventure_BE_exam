@@ -6,7 +6,7 @@ var md5 = require("md5");
 app.use(cors());
 const User = {
   test(req, res) {
-    res.cookie("BBBB", "100", { httpOnly: true, maxAge: 900000 });
+    res.cookie("CCC", "100", { httpOnly: true });
     console.log(req.cookies.selt, "selt");
     res.json({ status: "success", cookie: req.cookies, b: "100" });
   },
