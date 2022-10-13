@@ -6,9 +6,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var cors = require("cors");
 const corsConfig = {
-  origin: function(origin, callback) {
-    return callback(null, true);
-  },
+  // origin: function(origin, callback) {
+  //   return callback(null, true);
+  // },
+  origin: "https://fe-exam-goventure.vercel.app",
   optionsSuccessStatus: 200,
   credentials: true
 };
