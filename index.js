@@ -20,6 +20,13 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 const { getRouter } = require("./router");
+app.get("/s", (req, res) => {
+  res.cookie("bsaSession", req.session.id, { httpOnly: false });
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.send("set");
+});
+
 app.get("/td", function(req, res) {
   res.cookie("name", "express");
   console.log("td");
