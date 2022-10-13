@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 const login = {
   login(req, res) {
     res.cookie("AC", "100");
-    console.log(req.cookies);
+    console.log("Test-Cookie");
+    console.log(req.cookies, "After");
     // res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Credentials", "true");
 
