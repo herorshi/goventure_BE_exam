@@ -9,6 +9,7 @@ const corsConfig = {
   origin: function(origin, callback) {
     return callback(null, true);
   },
+  origin: true,
   optionsSuccessStatus: 200,
   credentials: true
 };
