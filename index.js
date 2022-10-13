@@ -6,10 +6,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var cors = require("cors");
 const corsConfig = {
-  // origin: function(origin, callback) {
-  //   return callback(null, true);
-  // },
-  origin: ["https://node-api-goventure.vercel.app"],
+  origin: function(origin, callback) {
+    return callback(null, true);
+  },
+  // origin: ["https://node-api-goventure.vercel.app"],
   optionsSuccessStatus: 200,
   credentials: true
 };
