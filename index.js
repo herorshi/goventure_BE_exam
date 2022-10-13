@@ -1,10 +1,12 @@
 var express = require("express");
 var app = express();
 var fs = require("fs");
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var cors = require("cors");
+var session = require("express-session");
+app.use(session({ secret: "XASDASDA" }));
+var ssn;
 const corsConfig = {
   // origin: function(origin, callback) {
   //   return callback(null, true);
