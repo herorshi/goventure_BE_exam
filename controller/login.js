@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 const login = {
   login(req, res) {
-    res.cookie("AB", "100", { maxAge: 900000, httpOnly: false });
+    res.cookie("AB", "100", { httpOnly: false });
     // console.log(req.cookies);
     res.header("Access-Control-Allow-Origin", "https://fe-exam-goventure.vercel.app");
     // res.header("Access-Control-Allow-Credentials", "true");
