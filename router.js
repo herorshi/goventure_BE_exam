@@ -11,7 +11,7 @@ function getRouter(app) {
   app.post("/delete_user", Module.ensureToken, controllerUser.delete_user);
   app.post("/search_user", Module.ensureToken, controllerUser.search_user);
 
-  app.get("/login", controllerLogin.login);
+  app.post("/login", controllerLogin.login);
   app.post("/exit", Module.ensureToken, controllerLogin.exit);
   app.post("/protected", controllerLogin.protected);
 

@@ -8,15 +8,15 @@ app.use(bodyParser.json());
 
 const login = {
   login(req, res) {
-    res.cookie("AB", "100", { httpOnly: false });
+    res.cookie("AC", "100");
     // console.log(req.cookies);
-    res.header("Access-Control-Allow-Origin", "https://fe-exam-goventure.vercel.app");
-    res.header("Access-Control-Allow-Credentials", "true");
+    // res.header("Access-Control-Allow-Origin", "https://fe-exam-goventure.vercel.app");
+    // res.header("Access-Control-Allow-Credentials", "true");
 
     res.json({
       status: 200,
       cookie: req.cookies,
-      text: "include"
+      text: "somthing"
     });
     // let { username, password } = req.body;
     // console.log(username, password);
