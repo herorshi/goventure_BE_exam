@@ -6,11 +6,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var cors = require("cors");
 const corsConfig = {
-  origin: function(origin, callback) {
-    return callback(null, true);
-  },
+  // origin: function(origin, callback) {
+  //   return callback(null, true);
+  // },
   // origin: "http://localhost:3000",
-  optionsSuccessStatus: 300,
+  optionsSuccessStatus: 200,
   credentials: true
 };
 app.use(cors(corsConfig));
