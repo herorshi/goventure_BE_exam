@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 const login = {
   login(req, res) {
     res.cookie("AD", "100", { maxAge: 900000 });
-    console.log(req.cookies);
+    // console.log(req.cookies);
     res.json({
       status: 200,
       cookie: req.cookies,
