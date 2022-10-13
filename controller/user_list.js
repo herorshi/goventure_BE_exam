@@ -6,12 +6,12 @@ var md5 = require("md5");
 app.use(cors());
 const User = {
   empty(req, res) {
-    delete req.session.email;
+    // delete req.session.email;
     // ssn.destroy("email", error => {});
     // ssn.email = null;
     console.log(req.session, "session");
     res.json({
-      message: "start",
+      message: "startAAAA",
       session: req.session
     });
   },
