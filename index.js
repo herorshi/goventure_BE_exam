@@ -10,7 +10,8 @@ const corsConfig = {
     return callback(null, true);
   },
   optionsSuccessStatus: 200,
-  credentials: true
+  credentials: "true"
+  // credentials: true
 };
 app.use(cors(corsConfig));
 var cookieParser = require("cookie-parser");
