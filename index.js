@@ -15,6 +15,7 @@ const corsConfig = {
   credentials: true
 };
 app.use(cors(corsConfig));
+app.options("*", cors(corsConfig));
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 var bodyParser = require("body-parser");
