@@ -11,7 +11,7 @@ const corsConfig = {
   },
   // origin: "http://localhost:3000",
   optionsSuccessStatus: 200,
-  credentials: false
+  credentials: true
 };
 app.use(cors(corsConfig));
 var cookieParser = require("cookie-parser");
