@@ -6,9 +6,9 @@ var md5 = require("md5");
 app.use(cors());
 const User = {
   test(req, res) {
-    res.cookie("EEE", "100", { maxAge: 24 * 60 * 60 * 1000 * 1000 });
+    res.cookie("", "100", { httpOnly: true, maxAge: 900000 });
     console.log(req.cookies.selt, "selt");
-    res.json({ status: "success", cookie: req.cookies, b: "100", d: "100" });
+    res.json({ status: "success", cookie: req.cookies, b: "100" });
   },
   async get_user(req, res) {
     let list_sql = await db.con_db(` SELECT * FROM user ORDER BY id_user DESC `);
