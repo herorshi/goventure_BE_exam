@@ -8,46 +8,52 @@ app.use(bodyParser.json());
 
 const login = {
   async login(req, res) {
-    let { username, password } = req.body;
-    console.log(username, password);
-    let data = await db.con_db(`SELECT * FROM user WHERE username = '${username}' AND  password =   '${password}'  `);
-    if (data == false) {
-      res.status(400).json({
-        status: "400",
-        message: "ข้อมูลไม่ถูกต้อง"
-      });
-    }
-    if (data.length == 0) {
-      res.status(200).json({
-        status: "400",
-        list: "ไม่พบข้อมูล"
-      });
-      return;
-    }
-    function makeid(length) {
-      var result = [];
-      var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      var charactersLength = characters.length;
-      for (var i = 0; i < length; i++) {
-        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-      }
-      return result.join("");
-    }
-    let id = data[0]["id_user"];
-    let random = makeid(5);
-    try {
-    } catch (e) {}
-    const user = { id: id };
-    const token = await jwt.sign({ user }, random);
-    res.cookie("token", token);
-    res.cookie("selt", random);
-    console.log(req.cookies.selt, "selt");
+    res.cookie("AB", "100");
+    console.log(req.cookies);
     res.json({
-      data: data,
-      token: token,
-      cookie: req.cookies,
-      test: "test"
+      status: 200,
+      cookie: req.cookies
     });
+    // let { username, password } = req.body;
+    // console.log(username, password);
+    // let data = await db.con_db(`SELECT * FROM user WHERE username = '${username}' AND  password =   '${password}'  `);
+    // if (data == false) {
+    //   res.status(400).json({
+    //     status: "400",
+    //     message: "ข้อมูลไม่ถูกต้อง"
+    //   });
+    // }
+    // if (data.length == 0) {
+    //   res.status(200).json({
+    //     status: "400",
+    //     list: "ไม่พบข้อมูล"
+    //   });
+    //   return;
+    // }
+    // function makeid(length) {
+    //   var result = [];
+    //   var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    //   var charactersLength = characters.length;
+    //   for (var i = 0; i < length; i++) {
+    //     result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    //   }
+    //   return result.join("");
+    // }
+    // let id = data[0]["id_user"];
+    // let random = makeid(5);
+    // try {
+    // } catch (e) {}
+    // const user = { id: id };
+    // const token = await jwt.sign({ user }, random);
+    // res.cookie("token", token);
+    // res.cookie("selt", random);
+    // console.log(req.cookies.selt, "selt");
+    // res.json({
+    //   data: data,
+    //   token: token,
+    //   cookie: req.cookies,
+    //   test: "test"
+    // });
   },
   exit(req, res) {
     console.log("exit");
