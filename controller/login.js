@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors());
 
 const login = {
   async login(req, res) {
