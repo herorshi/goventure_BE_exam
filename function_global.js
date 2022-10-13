@@ -17,7 +17,9 @@ const Module = {
           console.log("FALSE");
           res.json({
             text: "Error",
-            data: data
+            data: data,
+            token: req.token,
+            cookie: req.cookies
           });
         } else {
           console.log("True");
