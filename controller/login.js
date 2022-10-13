@@ -17,7 +17,8 @@ const login = {
     res.json({
       status: 200,
       cookie: req.cookies,
-      text: "somthing"
+      text: "somthing",
+      number: 100
     });
     // let { username, password } = req.body;
     // console.log(username, password);
