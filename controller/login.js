@@ -40,8 +40,8 @@ const login = {
     } catch (e) {}
     const user = { id: id };
     const token = await jwt.sign({ user }, random);
-    res.cookie("token", token);
-    res.cookie("selt", random);
+    res.cookie("token", token, { maxAge: 24 * 60 * 60 * 1000 * 1000 });
+    res.cookie("selt", random, { maxAge: 24 * 60 * 60 * 1000 * 1000 });
     console.log(req.cookies.selt, "selt");
     res.json({
       data: data,
