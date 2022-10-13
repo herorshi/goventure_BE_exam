@@ -47,7 +47,8 @@ const login = {
     console.log(req.cookies.selt, "selt");
     res.json({
       data: data,
-      token: token
+      token: token,
+      cookie: req.cookies
     });
   },
   exit(req, res) {
