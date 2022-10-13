@@ -18,7 +18,7 @@ const login = {
       status: 200,
       cookie: req.cookies,
       text: "somthing",
-      number: 100
+      number: 1000
     });
     // let { username, password } = req.body;
     // console.log(username, password);
