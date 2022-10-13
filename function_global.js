@@ -16,7 +16,7 @@ const Module = {
         if (err) {
           console.log("FALSE");
           res.json({
-            text: "Error",
+            text: "ErrorBBB",
             data: data,
             token: req.session.token,
             selt: req.session.selt,

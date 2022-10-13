@@ -61,7 +61,7 @@ const login = {
     jwt.verify(token, req.session.selt, function(err, data) {
       if (err) {
         res.json({
-          text: "Error",
+          text: "ErrorAAA",
           data: data
         });
       } else {
