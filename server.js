@@ -5,14 +5,15 @@ var fs = require("fs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 var cors = require("cors");
-const corsConfig = {
-  origin: function(origin, callback) {
-    return callback(null, true);
-  },
-  optionsSuccessStatus: 200,
-  credentials: true
-};
-app.use(cors(corsConfig));
+app.use(cors());
+// const corsConfig = {
+//   origin: function(origin, callback) {
+//     return callback(null, true);
+//   },
+//   optionsSuccessStatus: 200,
+//   credentials: true
+// };
+// app.use(cors(corsConfig));
 
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());
